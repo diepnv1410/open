@@ -1,1 +1,1 @@
-web: gunicorn phe_lieu.wsgi
+web: gunicorn config.wsgi:application
