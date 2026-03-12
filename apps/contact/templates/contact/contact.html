@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Liên hệ - Phế Liệu Thiệp Nhung{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="mb-4">LIÊN HỆ VỚI CHÚNG TÔI</h2>
+            
+            <div class="contact-info mb-4">
+                <h5><i class="fas fa-phone text-primary"></i> Hotline:</h5>
+                <p><a href="tel:0366579937" class="text-decoration-none">036.657.9937</a></p>
+                
+                <h5><i class="fas fa-envelope text-primary"></i> Email:</h5>
+                <p>thiep2k3@gmail.com</p>
+                
+                <h5><i class="fas fa-map-marker-alt text-primary"></i> Địa chỉ:</h5>
+                <p>KCN Bá Thiện 2, Thiện Kế, Bình Xuyên, Vĩnh Phúc</p>
+                
+                <h5><i class="fab fa-zalo text-primary"></i> Zalo:</h5>
+                <p>036.657.9937</p>
+            </div>
+            
+            <div class="working-hours">
+                <h5><i class="fas fa-clock text-primary"></i> Giờ làm việc:</h5>
+                <p>Làm 24/7</p>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="contact-form bg-light p-4 rounded">
+                <h3 class="mb-4">GỬI YÊU CẦU TƯ VẤN</h3>
+                
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.name.id_for_label }}" class="form-label">Họ tên *</label>
+                        {{ form.name }}
+                        {% if form.name.errors %}
+                            <div class="text-danger">{{ form.name.errors }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.phone.id_for_label }}" class="form-label">Số điện thoại *</label>
+                        {{ form.phone }}
+                        {% if form.phone.errors %}
+                            <div class="text-danger">{{ form.phone.errors }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                            <div class="text-danger">{{ form.email.errors }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.address.id_for_label }}" class="form-label">Địa chỉ</label>
+                        {{ form.address }}
+                        {% if form.address.errors %}
+                            <div class="text-danger">{{ form.address.errors }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.message.id_for_label }}" class="form-label">Nội dung *</label>
+                        {{ form.message }}
+                        {% if form.message.errors %}
+                            <div class="text-danger">{{ form.message.errors }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">GỬI YÊU CẦU</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

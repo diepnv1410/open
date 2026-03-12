@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="news-detail">
+<div class="container">
+
+<div class="row">
+
+<!-- ARTICLE -->
+<div class="col-lg-8">
+
+<article class="news-article">
+
+<h1 class="news-title">
+{{ service.name }}
+</h1>
+
+<div class="news-meta">
+<i class="fas {{ service.icon }}"></i> Dịch vụ thu mua
+</div>
+
+{% if service.image %}
+<img src="{{ service.image.url }}" class="img-fluid news-cover">
+{% endif %}
+
+<div class="news-content">
+
+<p>
+{{ service.description }}
+</p>
+
+<p>
+Chúng tôi chuyên cung cấp dịch vụ <strong>{{ service.name }}</strong> 
+uy tín, giá cao và thu mua tận nơi tại Hà Nội và các khu vực lân cận.
+</p>
+
+<ul>
+<li>Thu mua tận nơi</li>
+<li>Thanh toán nhanh</li>
+<li>Giá thu mua cạnh tranh</li>
+<li>Hỗ trợ tháo dỡ miễn phí</li>
+</ul>
+
+</div>
+
+</article>
+
+</div>
+
+
+<!-- SIDEBAR -->
+<div class="col-lg-4">
+
+<div class="news-sidebar">
+
+<h4>Dịch vụ khác</h4>
+
+{% for s in other_services %}
+
+<div class="news-item">
+
+{% if s.image %}
+<img src="{{ s.image.url }}">
+{% endif %}
+
+<div>
+<a href="{% url 'services:detail' s.slug %}">
+{{ s.name }}
+</a>
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<div class="call-box">
+
+<h4>Liên hệ thu mua</h4>
+
+<p>Gọi ngay để được báo giá tốt nhất</p>
+
+<a href="tel:0366579937" class="btn btn-danger btn-lg">
+<i class="fas fa-phone"></i> 036.657.9937
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+{% endblock %}

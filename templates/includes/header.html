@@ -1,0 +1,89 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home:index' %}">
+            <img src="{% static 'images/logo.png' %}" alt="Phế Liệu Thiệp Nhung" height="60">     {% comment %} Phế Liệu Sơn Nam{% endcomment %}
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarMain">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home:index' %}">TRANG CHỦ</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        THU MUA PHẾ LIỆU GIÁ CAO
+                    </a>
+                
+                    <ul class="dropdown-menu">
+                
+                        <!-- Dịch vụ -->
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item">
+                                Dịch vụ thu mua
+                            </a>
+                        
+                            <ul class="dropdown-menu submenu">
+                        
+                                {% for service in services_menu %}
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/dich-vu/{{ service.slug }}/">
+                                       {{ service.name }}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                        
+                            </ul>
+                        </li>
+                
+                        {% comment %} <li>
+                            <a class="dropdown-item" href="#">Bảng giá</a>
+                        </li> {% endcomment %}
+                
+                        <li>
+                            <a class="dropdown-item" href = "/quy-trinh-thu-mua/">
+                                Quy trình thu mua
+                            </a>
+                        </li>
+                
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if '/khu-vuc' in request.path %}active{% endif %}" href="#">KHU VỰC THU MUA</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if '/hinh-anh' in request.path %}active{% endif %}" href="{% url 'home:gallery' %}">HÌNH ẢNH THU MUA</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if '/lien-he' in request.path %}active{% endif %}" href="{% url 'contact:contact' %}">LIÊN HỆ</a>
+                </li>
+            </ul>
+            
+            <!-- BUTTON RIGHT -->
+            <div class="d-flex header-contact">
+
+                <a href="tel:0972636789" class="btn btn-call me-2">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>036.657.9937</span>
+                </a>
+
+                {% comment %} <a href="#" class="btn btn-zalo">
+                    <img src="{% static 'images/zalo.svg.png' %}" class="zalo-icon">
+                    <span>Chat Zalo</span>
+                </a>  {% endcomment %}
+
+            </div>
+
+        </div>
+    </div>
+</nav>

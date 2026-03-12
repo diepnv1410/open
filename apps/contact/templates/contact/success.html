@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Gửi yêu cầu thành công - Phế Liệu Thiệp Nhung{% endblock %}
+
+{% block content %}
+<div class="container py-5 text-center">
+    <div class="alert alert-success py-5">
+        <i class="fas fa-check-circle fa-5x text-success mb-4"></i>
+        <h2 class="mb-4">CẢM ƠN BẠN ĐÃ LIÊN HỆ!</h2>
+        <p class="lead">Chúng tôi đã nhận được yêu cầu của bạn và sẽ phản hồi trong thời gian sớm nhất.</p>
+        <a href="{% url 'home:index' %}" class="btn btn-primary mt-4">VỀ TRANG CHỦ</a>
+    </div>
+</div>
+{% endblock %}
