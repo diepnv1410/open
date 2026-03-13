@@ -57,11 +57,11 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link {% if '/khu-vuc' in request.path %}active{% endif %}" href="#">KHU VỰC THU MUA</a>
+                    <a class="nav-link {% if '/khu-vuc' in request.path %}active{% endif %}" href="{% url 'home:maps' %}">KHU VỰC THU MUA</a>   
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link {% if '/hinh-anh' in request.path %}active{% endif %}" href="{% url 'home:gallery' %}">HÌNH ẢNH THU MUA</a>
+                    <a class="nav-link {% if '/hinh-anh' in request.path %}active{% endif %}" href="{% url 'home:picture' %}">HÌNH ẢNH THU MUA</a>
                 </li>
 
                 <li class="nav-item">

@@ -1,0 +1,205 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+
+.picture-section{
+    max-width:1200px;
+    margin:60px auto;
+    padding:20px;
+}
+
+.picture-title{
+    text-align:center;
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:50px;
+}
+
+/* grid */
+
+.picture-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* card */
+
+.picture-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    transition:0.35s;
+}
+
+.picture-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 35px rgba(0,0,0,0.18);
+}
+
+/* image */
+
+.picture-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+/* content */
+
+.picture-content{
+    padding:18px 20px;
+}
+
+.picture-content h3{
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.picture-content p{
+    font-size:15px;
+    color:#555;
+}
+
+/* responsive */
+
+@media(max-width:900px){
+
+.picture-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:600px){
+
+.picture-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+
+<div class="picture-section">
+
+<div class="picture-title">
+Hình ảnh thu mua phế liệu
+</div>
+
+
+<div class="picture-grid">
+
+<!-- card 1 -->
+
+<div class="picture-card">
+
+<img src="{% static 'images/services/dong.jpg' %}">
+
+<div class="picture-content">
+
+<h3>Thu Mua Phế Liệu Đồng</h3>
+
+<p>Thu mua đồng các loại với giá cao, hỗ trợ cân tại chỗ nhanh chóng</p>
+
+</div>
+
+</div>
+
+
+<!-- card 2 -->
+
+<div class="picture-card">
+
+<img src="{% static 'images/services/sat.jpg' %}">
+
+<div class="picture-content">
+
+<h3>Thu Mua Phế Liệu Sắt</h3>
+
+<p>Nhận thu mua sắt vụn số lượng lớn nhỏ, phục vụ tận nơi uy tín</p>
+
+</div>
+
+</div>
+
+
+<!-- card 3 -->
+
+<div class="picture-card">
+
+<img src="{% static 'images/services/nhaxuong.jpg' %}">
+
+<div class="picture-content">
+
+<h3>Thu Mua Phế Liệu Nhà Xưởng</h3>
+
+<p>Giải phóng kho xưởng nhanh gọn, thu mua mọi loại phế liệu</p>
+
+</div>
+
+</div>
+
+
+<!-- card 4 -->
+
+<div class="picture-card">
+
+<img src="{% static 'images/services/thiec.jpg' %}">
+
+<div class="picture-content">
+
+<h3>Thu Mua Phế Liệu Thiếc</h3>
+
+<p>Thu mua thiếc phế liệu giá hấp dẫn, hỗ trợ thu gom tận nơi</p>
+
+</div>
+
+</div>
+
+
+<!-- card 5 -->
+
+<div class="picture-card">
+
+<img src="{% static 'images/services/inox.jpg' %}">
+
+<div class="picture-content">
+
+<h3>Thu Mua Phế Liệu Inox</h3>
+
+<p>Thu mua inox các loại, giá cao, thanh toán nhanh</p>
+
+</div>
+
+</div>
+
+
+<!-- card 6 -->
+
+<div class="picture-card">
+
+<img src="{% static 'images/services/ic.jpg' %}">
+
+<div class="picture-content">
+
+<h3>Thu Mua Thiết Bị Điện Tử</h3>
+
+<p>Thu mua các loại thiết bị điện tử & bo mạch IC số lượng lớn</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+{% endblock %}

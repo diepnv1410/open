@@ -33,16 +33,22 @@ def services(request):
     }
     return render(request, 'home/services.html', context)
 
-def gallery(request):
+def picture(request):
     gallery = Gallery.objects.all()
     context = {
-        'gallery': gallery,
+        'picture': picture,
         'page_title': 'Hình ảnh - Phế Liệu Thiệp Nhung',
     }
-    return render(request, 'home/gallery.html', context)
+    return render(request, 'home/picture.html', context)
 
 def process(request):
     context = {
         'page_title': 'Quy trình thu mua - Phế Liệu Thiệp Nhung',
     }
     return render(request, 'home/process.html', context)
+
+def maps(request):
+    context = {
+        'page_title': 'Bản đồ - Phế Liệu Thiệp Nhung',
+    }
+    return render(request, 'home/maps.html', context)

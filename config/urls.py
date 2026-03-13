@@ -6,8 +6,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.home.urls')),
-    path('tin-tuc/', include('apps.news.urls')),
+    path('tin-tuc/', include('apps.news.urls')),    
     path('dich-vu/', include('apps.services.urls')),
+    path('khu-vuc/', include('apps.home.urls')),    
     path('lien-he/', include('apps.contact.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
